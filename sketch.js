@@ -47,6 +47,7 @@ var originTranslation;
 var dragX;
 var dragY;
 
+
 // SCENE 2
 
 var doves;
@@ -56,6 +57,7 @@ var hawks;
 
 var C; // colours
 
+var firstFrame;
 
 function setup() {
 	
@@ -138,6 +140,8 @@ function setup() {
 	}
 
 	canvas = createCanvas(width, height);
+	
+	firstFrame = true;
 }
 
 
@@ -260,18 +264,20 @@ function inverseZY(Y){
 
 function textInfo(){
 	noStroke();
-    textSize(height/40);
+    textSize(height/50 + width/160);
     textAlign(RIGHT,CENTER);
-    fill(C[0].r,C[0].g,C[0].b);
-    text("Avg Doves: "+round(avD/T),width - 60,3*height/48);
-    fill(C[1].r,C[1].g,C[1].b);
-    text("Avg Hawks: "+round(avH/T),width - 60,5*height/48);
-    fill(C[0].r,C[0].g,C[0].b);
-    text("Now Doves: "+round(D),width - 60,10*height/48);
-    fill(C[1].r,C[1].g,C[1].b);
-    text("Now Hawks: "+round(H),width - 60,12*height/48);
     fill(C[3].r,C[3].g,C[3].b);
-    text("Timestep: "+T,width - 60,16*height/48);
+    text("Press 'H' for Help",width - 60,3*height/48);
+    fill(C[0].r,C[0].g,C[0].b);
+    text("Avg Doves: "+round(avD/T),width - 60,7*height/48);
+    fill(C[1].r,C[1].g,C[1].b);
+    text("Avg Hawks: "+round(avH/T),width - 60,9*height/48);
+    fill(C[0].r,C[0].g,C[0].b);
+    text("Now Doves: "+round(D),width - 60,14*height/48);
+    fill(C[1].r,C[1].g,C[1].b);
+    text("Now Hawks: "+round(H),width - 60,16*height/48);
+    fill(C[3].r,C[3].g,C[3].b);
+    text("Timestep: "+T,width - 60,20*height/48);
 }
 
 function axis(){
@@ -459,6 +465,7 @@ function scene3(){
 }
 
 function draw() {
+	
 	cursor('default');
 	background(C[2].r,C[2].g,C[2].b);
 	
@@ -480,6 +487,11 @@ function draw() {
 	        nextTimestep();
 	        T+=1;
 //         }  
+    }
+    
+    if (firstFrame){
+	    K72();
+	    firstFrame = false;
     }
 }
 
@@ -513,6 +525,10 @@ function K38(){
 
 function K40(){
 	Zoom += ZSpeed;
+}
+
+function K72(){
+	alert('USAGE INSTRUCTIONS:\n\n - H: These Usage Instructions (help)\n\n - P: Pause animation\n - R: Reset animation\n - S: Advance to next Scene\n - X: Define initial num of hawks/doves\n - SPACE: Advance 1 timestep\n - BACKSPACE: Move back 1 timestep\n - SHIFT: Reset position/zoom of graph\n - UP: Zoom in\n - DOWN: Zoom out\n - DRAG: Reposition axis')
 }
 
 function K80(){
@@ -551,9 +567,13 @@ function K83(){
 }
 
 function K88(){
+	if (scene===1){
 	K82();
 	PLAY = false;
 	chooseStartPoint = true;
+	} else {
+		alert('You can only initialise the setup when on SCENE 1 (graph of Hawk / Dove)');
+	}
 }
 
 function keyPressed(){
@@ -563,6 +583,7 @@ function keyPressed(){
         case 32: K32(); break;
         case 38: K38(); break;
         case 40: K40(); break;
+        case 72: K72(); break;
         case 80: K80(); break;
         case 82: K82(); break;
         case 83: K83(); break;
@@ -571,8 +592,8 @@ function keyPressed(){
 }
 
 function mouseDragged(){
-    dragX += mouseX-pmouseX;
-    dragY -= mouseY-pmouseY;
+    dragX += (mouseX-pmouseX)/5;
+    dragY -= (mouseY-pmouseY)/5;
 }
 
 function mouseClicked(){
