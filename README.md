@@ -1,4 +1,4 @@
-# Dove-Hawk-Marketplace
+# Dove-Hawk-GameTheory-Simulation
 Populations of Doves and Hawks compete for food!
 
 Controls:
