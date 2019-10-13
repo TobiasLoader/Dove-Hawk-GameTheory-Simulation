@@ -1,5 +1,5 @@
-# Dove-Hawk-GameTheory-Simulation
-Populations of Doves and Hawks compete for food!
+# Hawk-Dove-GameTheory-Simulation
+Populations of Hawks and Doves compete for food!
 
 Controls:
 
@@ -21,4 +21,4 @@ Controls:
 
     SHIFT: Reposition graph/s
 
-This simulates a market between two species, Doves and Hawks. All D/H search for food each timestep. There are only (MAX=500) pieces of food each timestep. If a creature is the only one to find a piece of food, it gets to keep all the food, if however another creature finds the same piece/s of food also, it must share according to the rules (see gameTheory variable.) The amount of food eaten by a species determines the number of individuals of that species in the next timestep.
+This is a simulation of two species, Doves and Hawks, each with differenct traits. The Doves has a tendancy to share, whilst to Hawks are more agressive. All D/H search for food each timestep. There are only (MAX=500) pieces of food each timestep. If a creature is the only one to find a piece of food, it gets to keep all the food, if however another creature finds the same piece/s of food also, it must share according to the rules (see gameTheory variable.) The amount of food eaten by a species determines the number of individuals of that species in the next timestep.
