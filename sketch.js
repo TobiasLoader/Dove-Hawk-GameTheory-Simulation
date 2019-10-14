@@ -131,7 +131,7 @@ function setup() {
 	C = [{r:49,g:160,b:206},{r:206,g:95,b:49},{r:250,g:250,b:250},{r:70,g:70,b:70},{r:50,g:50,b:50}];
 	// [0]=BLUE, [1]=RED, [2]=WHITE, [3]=GREY1, [4]=GREY2
 	
-	textFont('Avenir');
+	textFont('Quicksand');
 	textAlign(CENTER,CENTER);
 	
 		
@@ -267,15 +267,15 @@ function textInfo(){
     textSize(height/50 + width/160);
     textAlign(RIGHT,CENTER);
     fill(C[3].r,C[3].g,C[3].b);
-    text("Press 'H' for Help",width - 60,3*height/48);
+    text("Press the 'I' key for Instructions",width - 60,3*height/48);
     fill(C[0].r,C[0].g,C[0].b);
-    text("Avg Doves: "+round(avD/T),width - 60,7*height/48);
+    text("Avg Doves: "+round(avD/T),width - 60,9*height/48);
     fill(C[1].r,C[1].g,C[1].b);
-    text("Avg Hawks: "+round(avH/T),width - 60,9*height/48);
+    text("Avg Hawks: "+round(avH/T),width - 60,7*height/48);
     fill(C[0].r,C[0].g,C[0].b);
-    text("Now Doves: "+round(D),width - 60,14*height/48);
+    text("Now Doves: "+round(D),width - 60,16*height/48);
     fill(C[1].r,C[1].g,C[1].b);
-    text("Now Hawks: "+round(H),width - 60,16*height/48);
+    text("Now Hawks: "+round(H),width - 60,14*height/48);
     fill(C[3].r,C[3].g,C[3].b);
     text("Timestep: "+T,width - 60,20*height/48);
 }
@@ -490,7 +490,7 @@ function draw() {
     }
     
     if (firstFrame){
-	    K72();
+// 	    K72();
 	    firstFrame = false;
     }
 }
@@ -527,8 +527,8 @@ function K40(){
 	Zoom += ZSpeed;
 }
 
-function K72(){
-	alert('USAGE INSTRUCTIONS:\n\n - H: These Usage Instructions (help)\n\n - P: Pause animation\n - R: Reset animation\n - S: Advance to next Scene\n - X: Define initial num of hawks/doves\n - SPACE: Advance 1 timestep\n - BACKSPACE: Move back 1 timestep\n - SHIFT: Reset position/zoom of graph\n - UP: Zoom in\n - DOWN: Zoom out\n - DRAG: Reposition axis')
+function K73(){
+	alert('Hawk-Dove Game Simulation: instructions\n\n - Press \'I\' key to re-open this dialogue \n\n - P: Pause animation\n - R: Reset animation\n - S: Advance to next scene\n - X: Define initial num of Hawks/Doves\n - SPACE: Advance 1 timestep\n - BACKSPACE: Move back 1 timestep\n - SHIFT: Reset position/zoom level of graph\n - UP: Zoom in\n - DOWN: Zoom out\n - DRAG: Reposition axes\n')
 }
 
 function K80(){
@@ -583,7 +583,7 @@ function keyPressed(){
         case 32: K32(); break;
         case 38: K38(); break;
         case 40: K40(); break;
-        case 72: K72(); break;
+        case 73: K73(); break;
         case 80: K80(); break;
         case 82: K82(); break;
         case 83: K83(); break;
