@@ -383,7 +383,7 @@ function scene1(){
 	    axisMarkings('Y',MAX);
     }
     
-    axisLabels("Dove","Hawk",20/Zoom);
+    axisLabels("Doves","Hawks",20/Zoom);
 
     textInfo();
 //     alert(pairFuncResult);
