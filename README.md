@@ -27,6 +27,16 @@ Controls:
     DRAG: Drag the graph/s
 
     SHIFT: Reposition graph/s
+ 
+ 
+ Game Theory Variable:
+    
+    F = 9/4; // Slightly above 2 to allow growth in population size despite waste.
+    
+    gameTheory = [
+	    [ 3*F/6,   2*F/6],   // Dove: D, H
+	    [ 4*F/6,   0*F/6]    // Hawk: D, H
+	];
 
 
 
