@@ -277,7 +277,7 @@ function textInfo(){
     fill(C[1].r,C[1].g,C[1].b);
     text("Now Hawks: "+round(H),width - 60,14*height/48);
     fill(C[3].r,C[3].g,C[3].b);
-    text("Timestep: "+T,width - 60,20*height/48);
+    text("Time step: "+T,width - 60,20*height/48);
 }
 
 function axis(){
@@ -528,7 +528,7 @@ function K40(){
 }
 
 function K73(){
-	alert('Hawk-Dove Game Simulation: instructions\n\n - Press \'I\' key to re-open this dialogue \n\n - P: Pause animation\n - R: Reset animation\n - S: Advance to next scene\n - X: Define initial num of Hawks/Doves\n - SPACE: Advance 1 timestep\n - BACKSPACE: Move back 1 timestep\n - SHIFT: Reset position/zoom level of graph\n - UP: Zoom in\n - DOWN: Zoom out\n - DRAG: Reposition axes\n')
+	alert('Hawk-Dove Game Simulation: instructions\n\n - Press \'I\' key to re-open this dialogue \n\n - P: Pause animation\n - R: Reset animation\n - S: Advance to next scene\n - X: Define initial number of Hawks/Doves\n - SPACE: Advance 1 time step\n - BACKSPACE: Move back 1 time step\n - SHIFT: Reset position/zoom level of graph\n - UP: Zoom in\n - DOWN: Zoom out\n - DRAG: Reposition axes\n')
 }
 
 function K80(){
